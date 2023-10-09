@@ -145,3 +145,51 @@ Rodar o comando no terminal com Git Bash
 ```
 npm run start
 ```
+
+*Passo 3: Após o git clone...*
+
+Criar arquivo routes dentro da pasta src
+```
+mkdir src/routes
+```
+
+Criar arquivo dentro da pasta routes
+```
+touch src/routes/rotas.js
+```
+
+Digitar códigos dentro do arquivo rotas.js
+```
+// Importar o modulo de Router do express
+const { Router } = require('express');
+
+// Instanciar o Router na variável router
+const router = Router();
+
+router.get('/listar', (request, response) => {
+    response.send('Método GET: listar informações');
+});
+router.post('/cadastrar', (request, response) => {
+    response.send('Método POST: salvar informações');
+});
+router.put('/user/:id', (request, response) => {
+    response.send('Método PUT: atualizar informações');
+});
+router.delete('/user/:id', (request, response) => {
+    response.send('Método DELETE: remover informações');
+});
+
+module.exports = router;
+```
+
+Digitar códigos dentro do arquivo
+app.js, importar o arquivo de rotas nas cofigurações da api
+```
+const router = require('./routes/rotas');
+```
+
+Digitar código dentro do arquivo 
+app.js, habilitar as rotas na aplicação
+```
+app.use('/api', router);
+```
