@@ -193,3 +193,35 @@ app.js, habilitar as rotas na aplicação
 ```
 app.use('/api', router);
 ```
+
+*Passo 4: Após o git clone...*
+
+Criar um novo projeto no Insomnia
+<img src="./assets/InsomniaProjeto.png">
+
+Criar uma coleção de requisições para esse projeto
+<img src="./assets/InsomniaRequisicao.png">
+
+Escolher um nome para essa coleção
+<img src="./assets/InsomniaNome.png">
+
+Criar as requisições necessárias para a API clicando no botão 'New HTTP Request'
+<img src="./assets/InsomniaHTTP.png">
+
+Executar a ação da rota no botão "Send"
+<img src="./assets/InsomniaSend.png">
+
+*Testando os Métodos...*
+
+Método GET
+<img src="./assets/MetodoGET.png">
+
+Método POST
+<img src="./assets/MetodoPOST.png">
+
+Método PUT
+<img src="./assets/MetodoPUT.png">
+
+Método DELETE
+<img src="./assets/MetodoDELETE.png">
+
