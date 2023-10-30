@@ -225,3 +225,79 @@ Método PUT
 Método DELETE
 <img src="./assets/MetodoDELETE.png">
 
+*Passo 5: Após o git clone...*
+
+Criar a pasta "controller" dentro de src
+```
+mkdir scr/controllers
+```
+
+Criar arquivo "crudController" dentro da pasta controller
+```
+touch src/controllers/crudController.js
+```
+
+Colocar os códigos no crudController
+```
+function listarDados(request, response) {
+    response.send('Retorno de lista de informação do Banco de dados');
+}
+
+function gravarDados(request, response) {
+    response.send('Método utilizado para salvar informações!');
+}
+
+function atualizarDados(request, response) {
+    response.send('Método utilizado para editar informações!');
+}
+
+function deletarDados(request, response) {
+    response.send('Método utilizado para deletar informações!');
+}
+
+module.exports = {
+    listarDados,
+    gravarDados, 
+    atualizarDados, 
+    deletarDados
+}
+```
+
+Alterar o arquivo rotas.js
+```
+// Importar pacote do express
+const { Router } = require('express');
+// Instanciar o Router na variavel router
+const router = Router();
+// Importar funções do controller para a rota acessar as funções
+const { 
+    listarDados,
+    gravarDados,
+    atualizarDados,
+    deletarDados
+ } = require('../controllers/crudController');
+
+router.get('/listar', listarDados);
+
+router.post('/gravar', gravarDados);
+
+router.put('/atualizar/:id', atualizarDados);
+
+router.delete('/deletar/:id', deletarDados);
+
+module.exports = router;
+```
+
+*Testando os Métodos no Insomnia...*
+
+Método GET
+<img src="./assets/GET.png">
+
+Método POST
+<img src="./assets/POST.png">
+
+Método PUT
+<img src="./assets/PUT.png">
+
+Método DELETE
+<img src="./assets/DELETE.png">
